@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35118.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingDojoCSharp", "CodingDojoCSharp.csproj", "{14CD22F2-064B-4EA7-B4E4-9B9B82832354}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodingDojoCSharp.Tests", "..\CodingDojoCSharp.Tests\CodingDojoCSharp.Tests.csproj", "{649AEF1D-5A54-48E9-96AA-0447B9402D3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14CD22F2-064B-4EA7-B4E4-9B9B82832354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14CD22F2-064B-4EA7-B4E4-9B9B82832354}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14CD22F2-064B-4EA7-B4E4-9B9B82832354}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14CD22F2-064B-4EA7-B4E4-9B9B82832354}.Release|Any CPU.Build.0 = Release|Any CPU
+		{649AEF1D-5A54-48E9-96AA-0447B9402D3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{649AEF1D-5A54-48E9-96AA-0447B9402D3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{649AEF1D-5A54-48E9-96AA-0447B9402D3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{649AEF1D-5A54-48E9-96AA-0447B9402D3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F96F7A7-2367-4D48-8E41-D90628B9459F}
+	EndGlobalSection
+EndGlobal

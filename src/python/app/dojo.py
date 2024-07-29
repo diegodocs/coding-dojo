@@ -1,0 +1,3 @@
+
+def calculate(): 
+    return True
