@@ -1,12 +1,14 @@
 # Coding Dojo Sessions
 
+<img src="./images/dojoteam.png" width="400px" />
+
 ## What ?
 
 - The word dojo, meaning “the place of the way,” comes from Japanese martial arts. It is an honored place where students and masters come together for deliberate practice to develop their skills
 
-![Dojo](./images/dojo.png)
+<img src="./images/dojo.png" width="400px" />
 
-- Coding Dojo is a session for EVERYONE who want learn about software delopment.
+- Coding Dojo is a session for EVERYONE who want learn about software development.
 
 ### References
 
@@ -31,7 +33,7 @@
   - Target: solve a code challenge (or at least try) using [TDD](#tdd).
   - Time-Boxed:
     - 90 mins - 120 mins max
-    - you can repeat it but ALWAYS start from the begining
+    - you can repeat it but ALWAYS start from the beginning
   - Coding pair (driver and navigator).
 - Shift:
   - Each pair has a small (5 to 10 minutes) timebox to advance
@@ -58,7 +60,7 @@ During each turn, we have:
 
 #### Audience
 
-- Test running successfuly (green)
+- Test running successful (green)
   - ask, suggest ideas and share feedbacks
 - Test failing (red)
   - keep in silence and let drive and navigator work and fix the issues
@@ -73,6 +75,6 @@ During each turn, we have:
 ![TDD workflow](./images/tdd.png)
 
 - Encourage code simplicity
-- Increase code confidence and refactoring elegibility
+- Increase code confidence and refactoring eligibility
 
 ![All code is guilty until proven innocent](./images/tdd2.png)
