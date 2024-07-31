@@ -6,21 +6,25 @@ This is a fun kata that you will be responsible to refactor a real legacy Order 
 
 ## Instructions
 
-- Based on follow existing code:
-  - create unit-test to cover scenarios:
-    - Pedido realizado com sucesso!
-    - Cliente invalido
-    - Pedido invalido  
-    - PedidoItem invalido
-  - move entities to Domain layer
-  - a rich Domain should be responsible for validation rules
-  - Infra layer should isolate every external dependency
-  - if SendEmail fail, you can retry later ... but the order can save normally 
-  - implement Repository Pattern
-  - implement IoC/Dependency Injection
-  - implement in-memory repository
-  - create mocks for infra classes
-  - improve table design isolating products table
+Based on follow existing code:
+
+- create unit-test to cover scenarios:
+  - Pedido realizado com sucesso
+  - Cliente invalido
+  - Pedido invalido  
+  - PedidoItem invalido  
+- improve error with specific messages
+- move entities to Domain layer
+- a rich Domain should be responsible for validation rules (show state and list of errors)
+- SalvarPedido should raise exception if entities are not valid before touch the database
+- you should always close connection, even when error happen
+- Infra layer should isolate every external dependency
+- if SendEmail fail, you can retry later ... but the order can save normally
+- implement Repository Pattern
+- implement IoC/Dependency Injection
+- implement in-memory repository
+- create mocks for infra classes
+- improve table design isolating products info
 
 ## Setup your local environment
 
@@ -48,7 +52,7 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=abcDEF123#" -p 1433:1433 --name sq
  
     CREATE TABLE [Pedido] (
         [PedidoId]            INT             NOT NULL,
-        [ClienteID]           INT          NOT NULL,
+        [ClienteID]           INT             NOT NULL,
         [PedidoDataCadastro]  DATETIME        NULL,
         [PedidoValorTotal]    NUMERIC (18, 2) NULL,  
         PRIMARY KEY ([PedidoId] ASC)
@@ -76,7 +80,7 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=abcDEF123#" -p 1433:1433 --name sq
 ### Example of valid order
 
 ```csharp
-    Console.WriteLine("App Start");
+    
     var pedido = new Pedido();
     pedido.ClienteNome = "Cliente 1";   
     pedido.ClienteCPF = "12345678901";
@@ -87,7 +91,7 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=abcDEF123#" -p 1433:1433 --name sq
     pedido.ListaDeItens.Add(new PedidoItem { CodigoProduto = 2, NomeProduto = "Raquete Ping Pong Profissional", Quantidade = 2, ValorUnitario = 450 });
     pedido.ListaDeItens.Add(new PedidoItem { CodigoProduto = 3, NomeProduto = "Tenis Mizuno Prophecy LS Tamanho 36", Quantidade = 1, ValorUnitario = 1999 });
     var resultado = pedido.SalvarPedido();
-    Console.WriteLine($"Resultado: {resultado}");
+    
 ```
 
 ### Code for refactoring
