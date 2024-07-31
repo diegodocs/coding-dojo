@@ -8,13 +8,16 @@ This is a fun kata that you will be responsible to refactor a real legacy Order 
 
 - Based on follow existing code:
   - create unit-test to cover scenarios:
-      - Pedido realizado com sucesso!
-      - Cliente invalido
-      - Pedido invalido  
+    - Pedido realizado com sucesso!
+    - Cliente invalido
+    - Pedido invalido  
+    - PedidoItem invalido
   - move entities to Domain layer
   - a rich Domain should be responsible for validation rules
   - Infra layer should isolate every external dependency
+  - if SendEmail fail, you can retry later ... but the order can save normally 
   - implement Repository Pattern
+  - implement IoC/Dependency Injection
   - implement in-memory repository
   - create mocks for infra classes
   - improve table design isolating products table
