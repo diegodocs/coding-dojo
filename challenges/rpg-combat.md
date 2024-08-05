@@ -1,4 +1,4 @@
-# RPG Combat
+# RPG Combat System
 
 This is a fun kata that aim to build simple combat rules  for a role-playing game (RPG). It is implemented as a sequence of iterations.
 
