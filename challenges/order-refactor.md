@@ -6,47 +6,62 @@ This is a fun kata that you will be responsible to refactor a real legacy Order 
 
 ## Instructions
 
+1. Complete your local env [**steps**](#setup-your-local-environment)
+1. Complete each iteration before reading the next one.
+
+## Iteration One
+
 Based on follow existing code:
 
-- create unit-test to cover scenarios:
-  - Pedido realizado com sucesso
-  - Cliente invalido
-  - Pedido invalido  
-  - PedidoItem invalido  
-- improve error with specific messages
-- move entities to Domain layer
-- a rich Domain should be responsible for validation rules (show state and list of errors)
-- SalvarPedido should raise exception if entities are not valid before touch the database
-- you should always close connection, even when error happen
-- Infra layer should isolate every external dependency
-- if SendEmail fail, you can retry later ... but the order can save normally
-- implement Repository Pattern
-- implement IoC/Dependency Injection
-- implement in-memory repository
-- create mocks for infra classes
-- improve table design isolating products info
+1. create unit-test to cover scenarios:
 
-## Setup your local environment
+- Pedido realizado com sucesso
+- Cliente invalido
+- Pedido invalido  
+- PedidoItem invalido  
 
-### Fake SMTP
+## Iteration Two
+
+1. improve error with specific messages
+1. move entities to Domain layer
+1. a rich Domain should be responsible for validation rules (show state and list of errors)
+1. SalvarPedido should raise exception if entities are not valid before touch the database
+
+## Iteration Three
+
+1. you should always close connection, even when error happen
+1. implement Repository Pattern
+1. implement IoC/Dependency Injection
+1. implement in-memory repository
+
+## Iteration Four
+
+1. Infra layer should isolate every external dependency
+1. if SendEmail fail, you can retry later ... but the order can save normally
+1. create mocks for infra classes
+1. improve table design isolating products info
+
+### Setup your local environment
+
+#### Fake SMTP
 
 ```powershell
 docker run --rm -it -p 5000:80 -p 2525:25 rnwood/smtp4dev
 ```
 
-### SQLServer
+#### SQLServer
 
 ```powershell
 docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=abcDEF123#" -p 1433:1433 --name sqlsv -d mcr.microsoft.com/mssql/server:2022-latest
 ```
 
-### Create Database
+#### Create Database
 
 ```sql
     CREATE DATABASE orders
 ```
 
-### Create Tables
+#### Create Tables
 
 ```sql
  
@@ -77,7 +92,7 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=abcDEF123#" -p 1433:1433 --name sq
         )
 ```
 
-### Example of valid order
+#### Example of valid order
 
 ```csharp
     
@@ -94,7 +109,7 @@ docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=abcDEF123#" -p 1433:1433 --name sq
     
 ```
 
-### Code for refactoring
+#### Code for refactoring
 
 ```csharp
 using Microsoft.Data.SqlClient;
