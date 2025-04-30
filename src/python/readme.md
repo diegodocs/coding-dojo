@@ -1,4 +1,4 @@
-# Template CSharp
+# Template Python
 
 ## Requirements
 
